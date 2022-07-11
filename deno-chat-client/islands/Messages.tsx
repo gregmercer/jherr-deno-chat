@@ -13,13 +13,13 @@ export default function Messages() {
   const [text, setText] = useState("");
 
   const getMessages = useCallback(async () => {
-    const res = await fetch("https://gregmercer-jherr-deno-chat.deno.dev/messages");
+    const res = await fetch("https://gm-jherr-deno-chat.deno.dev/messages");
     const data = await res.json();
     setMessages(data);
   }, []);
 
   const onSendMessage = useCallback(async () => {
-    await fetch("https://gregmercer-jherr-deno-chat.deno.dev/messages", {
+    await fetch("https://gm-jherr-deno-chat.deno.dev/messages", {
       method: "POST",
       headers: {
         "content-type": "application/json",
