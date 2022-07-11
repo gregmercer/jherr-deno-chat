@@ -13,6 +13,7 @@ router
   })
   .post("/messages", async (context) => {
     const message = await context.request.body().value;
+    console.log(message);
     messages.push(message);
     context.response.body = messages;
   });
