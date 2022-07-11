@@ -6,12 +6,15 @@ const messages = [];
 const router = new Router();
 router
   .get("/", (context) => {
+    console.log("GET /");
     context.response.body = "Chat server!";
   })
   .get("/messages", (context) => {
+    console.log('GET /messages');
     context.response.body = messages;
   })
   .post("/messages", async (context) => {
+    console.log('POST /messages');
     const message = await context.request.body().value;
     console.log(message);
     messages.push(message);
