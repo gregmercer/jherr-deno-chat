@@ -14,7 +14,6 @@ router
   .post("/messages", async (context) => {
     const message = await context.request.body().value;
     messages.push(message);
-    channel.postMessage(message);
     context.response.body = messages;
   });
 
